@@ -34,7 +34,7 @@ impl State {
         }
     }
 }
-
+// placeholder
 impl GameState for State {
     fn tick(&mut self, ctx: &mut BTerm) {
         ctx.set_active_console(0);
