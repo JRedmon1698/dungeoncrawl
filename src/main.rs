@@ -5,6 +5,7 @@ mod player;
 
 mod prelude {
     pub use bracket_lib::prelude::*;
+    pub use legion::*;
     pub const SCREEN_WIDTH: i32 = 80;
     pub const SCREEN_HEIGHT: i32 = 50;
     pub const DISPLAY_WIDTH: i32 = SCREEN_WIDTH / 2;
@@ -34,7 +35,7 @@ impl State {
         }
     }
 }
-// placeholder
+
 impl GameState for State {
     fn tick(&mut self, ctx: &mut BTerm) {
         ctx.set_active_console(0);
