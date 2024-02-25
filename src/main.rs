@@ -53,6 +53,7 @@ impl GameState for State {
         ctx.set_active_console(1);
         ctx.cls();
         // TODO: execute systems
+        self.systems.execute(&mut self.ecs, &mut self.resources);
         // TODO: render draw buffer
     }
 }
