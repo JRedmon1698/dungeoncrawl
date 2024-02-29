@@ -1,3 +1,4 @@
+mod collisions;
 mod entity_render;
 mod map_render;
 mod player_input;
