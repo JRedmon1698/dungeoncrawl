@@ -1,8 +1,4 @@
-use legion::query::EntityFilter;
-
 use crate::prelude::*;
-
-use self::entity_render::entity_render;
 
 mod collisions;
 mod end_turn;
