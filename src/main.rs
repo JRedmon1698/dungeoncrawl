@@ -9,8 +9,10 @@ mod turn_state;
 mod prelude {
     pub use bracket_lib::prelude::*;
     pub use legion::*;
-    pub const SCREEN_WIDTH: i32 = 200;
-    pub const SCREEN_HEIGHT: i32 = 150;
+    pub use legion::systems::CommandBuffer;
+    pub use legion::world::SubWorld;
+    pub const SCREEN_WIDTH: i32 = 160;
+    pub const SCREEN_HEIGHT: i32 = 100;
     pub const DISPLAY_WIDTH: i32 = SCREEN_WIDTH / 2;
     pub const DISPLAY_HEIGHT: i32 = SCREEN_HEIGHT / 2;
     pub use crate::camera::*;
