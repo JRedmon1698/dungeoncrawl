@@ -8,9 +8,9 @@ mod turn_state;
 
 mod prelude {
     pub use bracket_lib::prelude::*;
-    pub use legion::*;
     pub use legion::systems::CommandBuffer;
     pub use legion::world::SubWorld;
+    pub use legion::*;
     pub const SCREEN_WIDTH: i32 = 160;
     pub const SCREEN_HEIGHT: i32 = 100;
     pub const DISPLAY_WIDTH: i32 = SCREEN_WIDTH / 2;
@@ -94,10 +94,13 @@ fn main() -> BError {
         .with_title("Dungeon Crawler")
         .with_fps_cap(30.0)
         .with_dimensions(DISPLAY_WIDTH, DISPLAY_HEIGHT)
+        .with_tile_dimensions(32, 32)
         .with_resource_path("resources/")
         .with_font("dungeonfont.png", 32, 32)
+        .with_font("terminal8x8.png", 8, 8)
         .with_simple_console(DISPLAY_WIDTH, DISPLAY_HEIGHT, "dungeonfont.png")
         .with_simple_console_no_bg(DISPLAY_WIDTH, DISPLAY_HEIGHT, "dungeonfont.png")
+        .with_simple_console_no_bg(SCREEN_WIDTH * 2, SCREEN_HEIGHT * 2, "terminal8x8.png")
         .build()?;
 
     main_loop(context, State::new())
