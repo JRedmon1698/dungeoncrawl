@@ -49,6 +49,7 @@ pub fn spawn_amulet_of_yala(ecs: &mut World, pos: Point) {
     ecs.push((
         Item,
         AmuletOfYala,
+        pos,
         Render {
             color: ColorPair::new(WHITE, BLACK),
             glyph: to_cp437('|'),
