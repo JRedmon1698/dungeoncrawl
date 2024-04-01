@@ -122,7 +122,7 @@ impl State {
             WHITE,
             BLACK,
             "You put on the Amulet of Yala and feel its power course through \
-            your veins",
+            your veins.",
         );
         ctx.print_color_centered(
             5,
