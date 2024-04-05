@@ -1,4 +1,5 @@
 pub use crate::prelude::*;
+use std::collections::HashSet;
 
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Render {
@@ -44,3 +45,10 @@ pub struct Item;
 
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct AmuletOfYala;
+
+#[derive(Clone, Debug, PartialEq)]
+pub struct FieldOfView {
+    pub visibile_tiles: HashSet<Point>,
+    pub radius: i32,
+    pub is_dirty: bool,
+}
