@@ -15,7 +15,8 @@ pub fn map_render(ecs: &SubWorld, #[resource] map: &Map, #[resource] camera: &Ca
             let player_fov = fov.iter(ecs).nth(0).unwrap();
 
             let idx = map_idx(x, y);
-            if map.in_bounds(pt) && player_fov.visible_tiles.contains(&pt) | map.revealed_tiles[idx]
+            if map.in_bounds(pt)
+                && (player_fov.visible_tiles.contains(&pt) | map.revealed_tiles[idx])
             {
                 let tint = if player_fov.visible_tiles.contains(&pt) {
                     WHITE
