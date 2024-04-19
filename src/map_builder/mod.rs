@@ -1,5 +1,10 @@
 use crate::prelude::*;
+
 const NUM_ROOMS: usize = 20;
+
+trait MapArchitect {
+    fn new(&mut self, rng: &mut RandomNumberGenerator) -> MapBuilder;
+}
 
 pub struct MapBuilder {
     pub map: Map,
