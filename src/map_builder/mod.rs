@@ -1,7 +1,9 @@
 mod empty;
+mod rooms;
 
 use crate::prelude::*;
 use empty::EmptyArchitect;
+use rooms::RoomsArchitect;
 
 const NUM_ROOMS: usize = 20;
 
