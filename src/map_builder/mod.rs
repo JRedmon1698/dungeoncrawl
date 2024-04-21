@@ -1,7 +1,9 @@
+mod automata;
 mod empty;
 mod rooms;
 
 use crate::prelude::*;
+use automata::CellularAutomataArchitect;
 use empty::EmptyArchitect;
 use rooms::RoomsArchitect;
 
