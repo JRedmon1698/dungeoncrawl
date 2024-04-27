@@ -74,6 +74,7 @@ impl MapArchitect for CellularAutomataArchitect {
         };
 
         self.random_noise_map(rng, &mut mb.map);
+
         for _ in 0..10 {
             self.iteration(&mut mb.map);
         }
