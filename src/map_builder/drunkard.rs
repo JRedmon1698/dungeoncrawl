@@ -8,7 +8,7 @@ const DESIRED_FLOOR: usize = NUM_TILES / 3;
 pub struct DrunkardsWalkArchitect {}
 
 impl MapArchitect for DrunkardsWalkArchitect {
-    fn new(&mut self, rng: RandomNumberGenerator) -> MapBuilder {
+    fn new(&mut self, rng: &mut RandomNumberGenerator) -> MapBuilder {
         let mut mb = MapBuilder {
             map: Map::new(),
             rooms: Vec::new(),
@@ -43,19 +43,22 @@ impl MapArchitect for DrunkardsWalkArchitect {
                 1024.0,
             );
 
-            dijkstra_map.map
+            dijkstra_map
+                .map
                 .iter()
                 .enumerate()
-                .filter(|(distance, _)| *distance > &2000.0)
-                .for_each(|idx. _| mb.map.tiles[idx] = TileType::Wall); 
+                .filter(|(_, distance)| *distance > &2000.0)
+                .for_each(|(idx, _)| mb.map.tiles[idx] = TileType::Wall);
         }
-        
+
         mb.monster_spawns = mb.spawn_monsters(&center, rng);
         mb.player_start = center;
         mb.amulet_start = mb.find_most_distant();
         mb
     }
+}
 
+impl DrunkardsWalkArchitect {
     fn drunkard(&mut self, start: &Point, rng: &mut RandomNumberGenerator, map: &mut Map) {
         let mut drunkard_pos = start.clone();
         let mut distance_staggered = 0;
@@ -68,7 +71,7 @@ impl MapArchitect for DrunkardsWalkArchitect {
                 0 => drunkard_pos.x -= 1,
                 1 => drunkard_pos.x += 1,
                 2 => drunkard_pos.y -= 1,
-                3 => drunkard_pos.y += 1,
+                _ => drunkard_pos.y += 1,
             }
 
             if !map.in_bounds(drunkard_pos) {
