@@ -11,6 +11,7 @@ use drunkard::DrunkardsWalkArchitect;
 use empty::EmptyArchitect;
 use prefab::apply_prefab;
 use rooms::RoomsArchitect;
+use themes::*;
 
 const NUM_ROOMS: usize = 20;
 
@@ -38,8 +39,15 @@ impl MapBuilder {
             1 => Box::new(RoomsArchitect {}),
             _ => Box::new(CellularAutomataArchitect {}),
         };
+
         let mut mb = architect.new(rng);
         apply_prefab(&mut mb, rng);
+
+        mb.theme = match rng.range(0, 2) {
+            0 => DungeonTheme::new(),
+            _ => ForestTheme::new(),
+        };
+
         mb
     }
 
