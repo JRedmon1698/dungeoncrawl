@@ -11,7 +11,7 @@ mod movement;
 mod player_input;
 mod random_move;
 mod tooltips;
-mod use_item;
+mod use_items;
 
 pub fn build_input_scheduler() -> Schedule {
     Schedule::builder()
