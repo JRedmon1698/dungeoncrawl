@@ -48,6 +48,12 @@ pub struct ChasingPlayer;
 pub struct Item;
 
 #[derive(Clone, Copy, Debug, PartialEq)]
+pub struct ActivateItem {
+    pub used_by: Entity,
+    pub item: Entity,
+}
+
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub struct ProvidesDungeonMap;
 
 #[derive(Clone, Copy, Debug, PartialEq)]
