@@ -26,3 +26,11 @@ pub enum EntityType {
 pub struct Templates {
     pub entities: Vec<Template>,
 }
+
+impl Templates {
+    pub fn load() -> Self {
+        let file = File::open("resources/template.ron").expect("Expected to open file");
+
+        from_reader(file).expect("Expected to load templates")
+    }
+}
