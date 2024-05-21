@@ -10,3 +10,5 @@ edition = "2021"
 bracket-lib = { git = "https://github.com/amethyst/bracket-lib" }
 # legion = "0.4.0"
 legion = { version = "~0.3.0" }
+serde = { version = "=1.0.115" }
+ron = "=0.6.1"
