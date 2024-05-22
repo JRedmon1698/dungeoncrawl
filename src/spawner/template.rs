@@ -92,7 +92,7 @@ impl Templates {
         }
 
         if let Some(effects) = &template.provides {
-            effect
+            effects
                 .iter()
                 .for_each(|(provides, n)| match provides.as_str() {
                     "Healing" => commands.add_component(entity, ProvidesHealing { amount: *n }),
