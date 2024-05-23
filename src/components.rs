@@ -71,6 +71,12 @@ pub struct FieldOfView {
 #[derive(Clone, PartialEq)]
 pub struct Carried(pub Entity);
 
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct Damage(pub i32);
+
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct Weapon;
+
 impl FieldOfView {
     pub fn new(radius: i32) -> Self {
         Self {
