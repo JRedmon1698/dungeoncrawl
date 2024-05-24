@@ -1,5 +1,13 @@
 Just a little dungeon crawler game written in rust based on Herbert Wolverson's excellent *Hands-on Rust* (https://www.amazon.com/Hands-Rust-Effective-Learning-Development/dp/1680508164)
 
+### Installation
+* Clone the repo `git clone https://github.com/JRedmon1698/dungeoncrawl.git`
+* Install rust and cargo (the rust package manager)
+   * `curl https://sh.rustup.rs -sSf | sh` (macOS & Linux)
+   * for Windows: https://win.rustup.rs/
+ * Navigate to the root of the project and run `cargo run --release`
+
+
 ### Gameplay
 Make your way through each level of the dungeon as you search for the venerable Amulet of Yala. Along the way you will face increasingly dangerous monsters, but also useful items to help keep you alive.
 
