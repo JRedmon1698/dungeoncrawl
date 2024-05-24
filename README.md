@@ -1,4 +1,4 @@
-Just a little dungeon crawler game written in rust based on Herbert Wolverson's excellent *Hands-on Rust*
+Just a little dungeon crawler game written in rust based on Herbert Wolverson's excellent *Hands-on Rust* (https://www.amazon.com/Hands-Rust-Effective-Learning-Development/dp/1680508164)
 
 ### Gameplay
 Make your way through each level of the dungeon as you search for the venerable Amulet of Yala. Along the way you will face increasingly dangerous monsters, but also helpful items to help keep you alive.
