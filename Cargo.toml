@@ -6,9 +6,10 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-# bracket-lib = "~0.8.1"
 bracket-lib = { git = "https://github.com/amethyst/bracket-lib" }
-# legion = "0.4.0"
 legion = { version = "~0.3.0" }
 serde = { version = "=1.0.115" }
 ron = "=0.6.1"
+
+[profile.release]
+lto = "thin"
