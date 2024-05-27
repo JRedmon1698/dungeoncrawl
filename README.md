@@ -10,17 +10,21 @@ Just a little dungeon crawler game written in rust based on Herbert Wolverson's 
 
 
 ### Gameplay
-Make your way through each level of the dungeon as you search for the venerable Amulet of Yala. 
-Along the way you will face increasingly dangerous monsters, but also useful items to help keep you alive.
+*Make your way through each level of the dungeon as you search for the venerable Amulet of Yala. 
+Along the way you will face increasingly dangerous monsters, but also useful items to help keep you alive.*
 
 In this roguelike dungeon crawler, each time you take action, monsters will also take action. 
-If you stand still, everyone else will, too. 
+If you stand still, they will, too. 
 
 Use the arrow keys to move around. 
 To attack monsters simply move toward them, but be careful: they attack back. 
 Monsters will come after you if they see you, so use your corners and corridors effectively to evade them.
 
 To pick up an item, step over it and press `g`. To use a consumable item like health potions and maps, 
-press the corresponding number represented for that item in the top left HUD.
+press the corresponding number for that item in the top left HUD.
+
+You will find various weapons scattered throughout the land that you can wield. 
+Some are deadlier than others. You will know which weapon you currently have equipped based on the upper-left HUD.
+Your armor is heavy; you may only carry one weapon at a time. 
 
 Make it to the final level and find the Amulet of Yala and you win!
