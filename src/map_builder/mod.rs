@@ -8,7 +8,6 @@ mod themes;
 use crate::prelude::*;
 use automata::CellularAutomataArchitect;
 use drunkard::DrunkardsWalkArchitect;
-use empty::EmptyArchitect;
 use prefab::apply_prefab;
 use rooms::RoomsArchitect;
 use themes::*;
@@ -89,7 +88,7 @@ impl MapBuilder {
 
         for y in min(y1, y2)..=max(y1, y2) {
             if let Some(idx) = self.map.try_idx(Point::new(x, y)) {
-                self.map.tiles[idx as usize] = TileType::Floor;
+                self.map.tiles[idx] = TileType::Floor;
             }
         }
     }
@@ -99,7 +98,7 @@ impl MapBuilder {
 
         for x in min(x1, x2)..=max(x1, x2) {
             if let Some(idx) = self.map.try_idx(Point::new(x, y)) {
-                self.map.tiles[idx as usize] = TileType::Floor;
+                self.map.tiles[idx] = TileType::Floor;
             }
         }
     }
@@ -126,7 +125,7 @@ impl MapBuilder {
         let dijkstra_map = DijkstraMap::new(
             SCREEN_WIDTH,
             SCREEN_HEIGHT,
-            &vec![self.map.point2d_to_index(self.player_start)],
+            &[self.map.point2d_to_index(self.player_start)],
             &self.map,
             1024.0,
         );
@@ -163,7 +162,7 @@ impl MapBuilder {
         let mut spawns = Vec::new();
         for _ in 0..NUM_MONSTERS {
             let target_index = rng.random_slice_index(&spawnable_tiles).unwrap();
-            spawns.push(spawnable_tiles[target_index].clone());
+            spawns.push(spawnable_tiles[target_index]);
             spawnable_tiles.remove(target_index);
         }
         spawns

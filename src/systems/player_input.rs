@@ -42,7 +42,7 @@ pub fn player_input(
                                 <(Entity, &Carried, &Weapon)>::query()
                                     .iter(ecs)
                                     .filter(|(_, c, _)| c.0 == player)
-                                    .for_each(|(e, c, w)| {
+                                    .for_each(|(e, _c, _w)| {
                                         commands.remove(*e);
                                     })
                             }
@@ -69,7 +69,7 @@ pub fn player_input(
             .unwrap();
 
         let mut enemies = <(Entity, &Point)>::query().filter(component::<Enemy>());
-        let mut did_something = false;
+        // let mut did_something = false;
 
         if delta.x != 0 || delta.y != 0 {
             let mut hit_something = false;
@@ -78,7 +78,7 @@ pub fn player_input(
                 .filter(|(_, pos)| **pos == destination)
                 .for_each(|(entity, _)| {
                     hit_something = true;
-                    did_something = true;
+                    // did_something = true;
 
                     commands.push((
                         (),
@@ -90,7 +90,7 @@ pub fn player_input(
                 });
 
             if !hit_something {
-                did_something = true;
+                // did_something = true;
                 commands.push((
                     (),
                     WantsToMove {

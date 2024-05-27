@@ -83,7 +83,7 @@ impl BaseMap for Map {
     }
 
     fn is_opaque(&self, idx: usize) -> bool {
-        self.tiles[idx as usize] != TileType::Floor
+        self.tiles[idx] != TileType::Floor
     }
 }
 
